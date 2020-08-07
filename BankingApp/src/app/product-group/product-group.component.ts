@@ -9,14 +9,14 @@ import { ApiDataService} from '../service/api-data.service'
 export class ProductGroupComponent implements OnInit {
 
   constructor(public apiData :ApiDataService) { }
-
+  data:any;
   ngOnInit(): void {
 
     this.apiData.getProductGroups().subscribe((data)=>{
       console.log(data);
+      this.data = data;
     });
   }
 
-  }
-
 }
+
